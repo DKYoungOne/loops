@@ -37,3 +37,51 @@ const logEntries = (obj) => {
     console.log(Object.entries(obj));
 }
 const arrayOfPersons = [person1, person2, person3];
+
+for (const element of arrayOfPersons) {
+    console.log(element.birthDate)
+}
+
+const personBirthDates = () => {
+    for (const element of arrayOfPersons) {
+        if (element.birthDate.slice(-1) % 2 !== 0) {
+            console.log(element.birthDate)
+        }
+    }
+}
+
+const mapArr = (arr) => { arr.map(x => console.log(x)); }
+
+const filterMale = (arr) => {
+    const result = arr.filter(person => person.gender == 'male');
+    return result;
+}
+
+
+const eigthiesFilter = (element) => {
+        if (element.birthDate > 1990) {return true;}
+}
+
+const ageFilter = () => {
+    for (element in arrayOfPersons) {
+        if (eigthiesFilter(element)) {
+            console.log(element);
+        }
+    }
+}
+
+function testCallback(element) {
+    if (element > 10) {
+        return true;
+    }
+}
+const array1 = [5, 12, 8, 130, 44];
+
+function find(arr, callback) {
+    for (let i = 0; i < arr.length; i++) {
+        if (callback(arr[i])) {
+            return arr[i];
+        } 
+    }
+    return undefined;
+}
