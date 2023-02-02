@@ -85,3 +85,12 @@ function find(arr, callback) {
     }
     return undefined;
 }
+
+function findIndex(arr, callback) {
+    for (let i = 0; i < arr.length; i++) {
+      if (callback(arr[i])) {
+        return arr.indexOf(arr[i]);
+      }
+    }
+    return -1;
+  }
